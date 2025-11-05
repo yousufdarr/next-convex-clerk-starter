@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + Convex + Clerk Starter
+
+This repository is a starter kit that wires together:
+
+- [Next.js](https://nextjs.org) for the React application framework and routing
+- [Convex](https://www.convex.dev) for the realtime backend and database
+- [Clerk](https://clerk.com) for authentication and user management
+
+Use it as a foundation for building full-stack, auth-enabled apps with a modern serverless backend.
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Copy the example environment file and fill in the Convex and Clerk keys:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   cp .env.example .env.local
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   Update `.env.local` with your Clerk publishable/secret keys and Convex deployment info.
 
-## Learn More
+3. In one terminal tab, start the Convex dev service:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npx convex dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. In a separate terminal tab, run the Next.js dev server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+The app runs at [http://localhost:3000](http://localhost:3000). Update `app/page.tsx` (or any other route) to start customizing the starter. Convex dev tooling runs at the URL printed by `npx convex dev`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Additional Resources
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js Docs](https://nextjs.org/docs)
+- [Convex Docs](https://docs.convex.dev)
+- [Clerk Docs](https://clerk.com/docs)
+
+When you are ready to deploy, follow the Next.js deployment guide or your hosting provider of choice; Convex and Clerk both have dedicated deployment guides in their documentation.
